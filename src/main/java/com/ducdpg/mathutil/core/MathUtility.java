@@ -22,7 +22,7 @@ public class MathUtility {
         if (n == 0 || n == 1)
             return 1; // kết thúc sớm hàm, nếu có thể
         
-        long result = 1; // biến tích luỹ, gom dồn việc nhận, biến con heo đất
+        long result = 10; // biến tích luỹ, gom dồn việc nhận, biến con heo đất
                         // acc accumulation
                         
         // sống sót đến for, sure n = 2..20
