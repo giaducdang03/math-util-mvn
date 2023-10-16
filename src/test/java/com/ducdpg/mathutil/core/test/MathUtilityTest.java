@@ -36,4 +36,24 @@ public class MathUtilityTest {
     public void VerifyFactorialGenRightArgument5ReturnOk(){
         assertEquals(120, MathUtility.getFactorial(5));
     }
+    
+    // 3 TEST CASE TRÊN KO ĐẸP, BAD SMELLS VÌ CHỈ KHÁC NHAU PHẦN DATA
+    // TRONG NGHỀ KIỂM THỬ CÓ 1 KĨ THUẬT GỌI LÀ TÁCH HẲN DATA KIỂM THỬ RA 
+    // 1 CHỖ, CHO DỄ NHÌN, DỄ QUẢN LÍ ĐƯỢC DATA THIẾU ĐỦ HAY KO
+    
+    // SAU ĐÓ TA ĐƯA BỘ DATA NÀY VÀO TRONG CÂU LỆNH SO SÁNH ASSERT()
+    // QUA CÁC THAM SỐ (PARAMETER)
+    // TỨC LLAF ASSERTEQUALS (EXPECTED, ACTUAL) LÀ 2 THAM SỐ
+    // ỨNG VỚI BỘ DATA ĐƯỢC TÁCH RA
+    //              120     5!
+    //              720     6!
+    //               24     4!
+    //                6     3!
+    //                2     2!
+    //              ...
+    
+    //              MẢNG [5][2] {0, 1} {1, 1} {2, 2} {3, 6} {5, 120}
+    // CODE NHÌN GỌN, PHÁT HIỆN ĐƯỢC THIẾU ĐỦ TEST DATA, TEST CASE
+    // KĨ THUẬT TÁCH DATA KIỂM THỬ RA KHỎI CÂU LỆNH SO SÁNH -> ĐƯỢC GỌI
+    // LÀ DDT - DATA DRIVEN TESTING - KIỂM THỬ THEO HƯỚNG TÁCH DATA RIÊNG RẼ
 }
